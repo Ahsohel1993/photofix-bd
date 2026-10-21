@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: photofix-bd
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/status
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: REMOVE_BG_API_KEY
+        sync: false
